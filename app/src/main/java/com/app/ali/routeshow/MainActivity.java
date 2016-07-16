@@ -23,6 +23,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.google.android.gms.maps.GoogleMap;
@@ -51,6 +52,11 @@ public class MainActivity extends  FragmentActivity {
 
         // Getting reference to SupportMapFragment of the activity_main
         SupportMapFragment fm = (SupportMapFragment)getSupportFragmentManager().findFragmentById(R.id.map);
+
+        ViewGroup.LayoutParams params = fm.getView().getLayoutParams();
+        params.height = 700;
+        fm.getView().setLayoutParams(params);
+
 
         // Getting reference to Button
         Button btnDraw = (Button)findViewById(R.id.btn_draw);
